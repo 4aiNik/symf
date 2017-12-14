@@ -6,4 +6,5 @@
 sitemap*.xml
 
 /vendor/
+/var/
 /app/config/parameters.yml
