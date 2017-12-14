@@ -1,0 +1,10 @@
+{% extends '@App/index.html.twig' %}
+
+{% block title %}Добавление поста{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Отправить">
+    {{ form_end(form) }}
+{% endblock %}
