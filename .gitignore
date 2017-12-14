@@ -7,4 +7,5 @@ sitemap*.xml
 
 /vendor/
 /var/
+/web/bundles/
 /app/config/parameters.yml
