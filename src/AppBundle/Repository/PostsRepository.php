@@ -14,22 +14,28 @@ class PostsRepository extends \Doctrine\ORM\EntityRepository
 {
 
     /**
+     * @param string $search
      * @return Posts[]
      */
 
-    public function getPosts() {
-        return $this->findAll();
+    public function getPosts($search) {
+        $qb = $this->createQueryBuilder('p');
+        $qb->where('p.content like :content');
+        $qb->setParameter('content', $search.'%');
+        $qb->addOrderBy('p.createdAt','DESC');
+        return $qb->getQuery()->getResult();
     }
 
     /**
      * @return array
      */
 
-    public function getPostsByContent1() {
+    public function getPostsByContent1($search) {
         $qb = $this->createQueryBuilder('p');
-        $qb->where('p.content like :content');
-        $qb->setParameter('content', 'Пост%');
-
+        if ($search) {
+            $qb->where('p.content like :content');
+            $qb->setParameter('content', $search.'%');
+        }
         return $qb->getQuery()->getResult();
     }
 

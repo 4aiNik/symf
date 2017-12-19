@@ -20,24 +20,20 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/post/", name="testpage")
+     * @Route("/post/", name="posts")
      */
-    public function postAction(Request $request)
+    public function getPostsAction(Request $request)
     {
+        $search = $request->get('search');
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('AppBundle:Posts')->getPosts();
-
-//        foreach ($posts as $post) {
-//            dump($post->getContent());
-//        }
-
-        return $this->render('@App/index.html.twig', [
+        $posts = $em->getRepository('AppBundle:Posts')->getPosts($search);
+        return $this->render('@App/Posts/posts.html.twig', [
             'posts' => $posts
         ]);
     }
 
     /**
-     * @Route("/post/add/", name="testpage")
+     * @Route("/post/add/", name="postsadd")
      */
     public function postAddAction(Request $request)
     {
@@ -49,10 +45,13 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);//данные объекта загонит в кэш-базу самого симфони
             $em->flush();//загонит в бд
+            $this->addFlash('success', 'Пост добавлен успешно');
+            return $this->redirectToRoute('posts');
         }
 
         return $this->render('@App/Posts/post_add.html.twig', [
            'form' => $form->createView(),
         ]);
+
     }
 }

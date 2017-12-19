@@ -82,6 +82,8 @@
   'SwiftmailerBundle:Collector:swiftmailer.html.twig' => __DIR__.'/../../../vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig',
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
+  'AppBundle::index.html.twig' => __DIR__.'/../../../src/AppBundle/Resources/views/index.html.twig',
+  'AppBundle:Posts:post_add.html.twig' => __DIR__.'/../../../src/AppBundle/Resources/views/Posts/post_add.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Collector:cache.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/cache.html.twig',
   'WebProfilerBundle:Collector:exception.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/exception.html.twig',

@@ -1,0 +1,12 @@
+.content {
+    width: 500px;
+}
+.created_at {
+    color: grey;
+}
+.jumbotron {
+    margin: 10px auto;
+    padding: 30px;
+    border: 1px solid black;
+    width: 50%;
+}

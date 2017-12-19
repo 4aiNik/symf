@@ -112,13 +112,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // testpage
-        if ('/post/add' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'testpage');
+        if (0 === strpos($pathinfo, '/post')) {
+            // posts
+            if ('/post' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'posts');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::getPostsAction',  '_route' => 'posts',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::postAddAction',  '_route' => 'testpage',);
+            // postsadd
+            if ('/post/add' === $trimmedPathinfo) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'postsadd');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::postAddAction',  '_route' => 'postsadd',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

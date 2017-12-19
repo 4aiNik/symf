@@ -18,12 +18,15 @@ class PostsType extends AbstractType
         $builder
             ->add('username', TextType::class, [
                 'label' => 'Имя',
+                'required' => false,
             ])
             ->add('title', TextType::class, [
                 'label' => 'Заголовок',
+                'required' => false,
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Текст',
+                'required' => false,
             ])
 
 

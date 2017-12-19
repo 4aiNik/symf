@@ -1,0 +1,24 @@
+{% extends '@App/index.html.twig' %}
+{% block title %}Посты{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" name="search" class="form-control" placeholder="{{ app.request.get('search') }}">
+                </div>
+                <button type="submit" class="btn btn-default">Поиск</button>
+            </form>
+        </div>
+
+        {% for post in posts %}
+            <div class="jumbotron">
+                <h1>{{ post.username }}</h1>
+                <p class="content">{{ post.title }}</p>
+                <p class="content">{{ post.content }}</p>
+                <p class="created_at">{{ post.createdAt|date('d.m.Y H:i:s') }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

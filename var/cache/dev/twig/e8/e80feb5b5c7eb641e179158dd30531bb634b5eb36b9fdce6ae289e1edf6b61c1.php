@@ -15,21 +15,21 @@ class __TwigTemplate_aa83498be161242a9f91d6a22df145b34e65dacd1633e3e28a2baeb8081
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a4fe5a6124d2e5181a854e4324357f221af9dfa20ccc7f08b9e2cbf7a503337b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a4fe5a6124d2e5181a854e4324357f221af9dfa20ccc7f08b9e2cbf7a503337b->enter($__internal_a4fe5a6124d2e5181a854e4324357f221af9dfa20ccc7f08b9e2cbf7a503337b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.atom.twig"));
+        $__internal_efee3b39f1012973e9ce02451aa92eb339a9f946eb8da58fb185a1704f67a0d9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_efee3b39f1012973e9ce02451aa92eb339a9f946eb8da58fb185a1704f67a0d9->enter($__internal_efee3b39f1012973e9ce02451aa92eb339a9f946eb8da58fb185a1704f67a0d9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.atom.twig"));
 
-        $__internal_ae02d55a169fdc486057ff121d8211e41ef14478496d906ec1be669c124beafc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ae02d55a169fdc486057ff121d8211e41ef14478496d906ec1be669c124beafc->enter($__internal_ae02d55a169fdc486057ff121d8211e41ef14478496d906ec1be669c124beafc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.atom.twig"));
+        $__internal_74b4f5a3d9ce6e7c3152eeec79ee1b6aae19fbe3c383b239b56659d26aee8cbb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_74b4f5a3d9ce6e7c3152eeec79ee1b6aae19fbe3c383b239b56659d26aee8cbb->enter($__internal_74b4f5a3d9ce6e7c3152eeec79ee1b6aae19fbe3c383b239b56659d26aee8cbb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.atom.twig"));
 
         // line 1
         echo twig_include($this->env, $context, "@Twig/Exception/exception.xml.twig", array("exception" => ($context["exception"] ?? $this->getContext($context, "exception"))));
         echo "
 ";
         
-        $__internal_a4fe5a6124d2e5181a854e4324357f221af9dfa20ccc7f08b9e2cbf7a503337b->leave($__internal_a4fe5a6124d2e5181a854e4324357f221af9dfa20ccc7f08b9e2cbf7a503337b_prof);
+        $__internal_efee3b39f1012973e9ce02451aa92eb339a9f946eb8da58fb185a1704f67a0d9->leave($__internal_efee3b39f1012973e9ce02451aa92eb339a9f946eb8da58fb185a1704f67a0d9_prof);
 
         
-        $__internal_ae02d55a169fdc486057ff121d8211e41ef14478496d906ec1be669c124beafc->leave($__internal_ae02d55a169fdc486057ff121d8211e41ef14478496d906ec1be669c124beafc_prof);
+        $__internal_74b4f5a3d9ce6e7c3152eeec79ee1b6aae19fbe3c383b239b56659d26aee8cbb->leave($__internal_74b4f5a3d9ce6e7c3152eeec79ee1b6aae19fbe3c383b239b56659d26aee8cbb_prof);
 
     }
 

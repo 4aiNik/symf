@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Posts
@@ -25,6 +26,15 @@ class Posts
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="Сообщение пустое")
+     *
+     * @Assert\Length(
+     *     min="10",
+     *     max="255",
+     *     minMessage="Длина строки не менее {{ limit }} символов",
+     *     maxMessage="Длина строки не более {{ limit }} символов"
+     * )
+     *
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
@@ -46,6 +56,15 @@ class Posts
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="Имя пустое")
+     *
+     * @Assert\Length(
+     *     min="3",
+     *     max="128",
+     *     minMessage="Длина строки не менее {{ limit }} символов",
+     *     maxMessage="Длина строки не более {{ limit }} символов"
+     * )
+     *
      * @ORM\Column(name="username", type="string", length=128)
      */
     private $username;
@@ -59,6 +78,13 @@ class Posts
 
     /**
      * @var string
+     *
+     * @Assert\NotBlank(message="Заголовок пустой")
+     *
+     * @Assert\Length(
+     *     max="128",
+     *     maxMessage="Длина строки не более {{ limit }} символов"
+     * )
      *
      * @ORM\Column(name="title", type="string", length=128)
      */
