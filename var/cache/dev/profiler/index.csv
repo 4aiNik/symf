@@ -253,3 +253,10 @@ a7ed1c,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D0%B0%D0%B1%D1%8B%
 4b040c,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D1%82%D0%B5%D0%BA%D1%81%D1%82,1513710123,,200
 a4fdb4,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D1%82%D0%B5%D0%BA%D1%81%D1%82,1513711028,,200
 0dc314,127.0.0.1,GET,http://symfony/app_dev.php/post/,1513711032,,200
+057f12,127.0.0.1,GET,http://symfony/app_dev.php/post/,1513711147,,200
+3e372f,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D1%82%D0%B5%D0%BA%D1%81%D1%82,1513711167,,200
+1d42b3,127.0.0.1,GET,http://symfony/app_dev.php/post/,1513711172,,200
+cb7cd4,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D0%B0%D0%B1%D1%8B%D1%80,1513711212,,200
+0a9626,127.0.0.1,GET,http://symfony/app_dev.php/post/,1513711280,,200
+3c1e3e,127.0.0.1,GET,http://symfony/app_dev.php/post/?search=%D0%B0%D0%B1,1513711283,,200
+2893c1,127.0.0.1,GET,http://symfony/app_dev.php/post/,1513711289,,200

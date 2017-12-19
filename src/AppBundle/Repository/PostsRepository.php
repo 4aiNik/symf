@@ -21,9 +21,9 @@ class PostsRepository extends \Doctrine\ORM\EntityRepository
     public function getPosts($search) {
         $qb = $this->createQueryBuilder('p');
         if($search) {
-            $qb->orWhere('p.title like :content');
-            $qb->orWhere('p.content like :content');
-            $qb->setParameter('content', '%'.$search.'%');
+            $qb->orWhere('LOWER(p.title) like :content');
+            $qb->orWhere('LOWER(p.content) like :content');
+            $qb->setParameter('content', '%'.strtolower($search).'%');
         }
         $qb->addOrderBy('p.createdAt','DESC');
         return $qb->getQuery()->getResult();
