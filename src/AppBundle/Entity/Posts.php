@@ -24,6 +24,13 @@ class Posts
     private $id;
 
     /**
+     * @var comments[]
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\comments", mappedBy="post")
+     */
+    private $comments;
+
+    /**
      * @var string
      *
      * @Assert\NotBlank(message="Сообщение пустое")
@@ -67,7 +74,7 @@ class Posts
      *
      * @ORM\Column(name="username", type="string", length=128)
      */
-    private $username;
+    private $username = 'Аноним';
 
     /**
      * @var int
@@ -253,5 +260,46 @@ class Posts
     public function getTitle()
     {
         return $this->title;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \AppBundle\Entity\comments $comment
+     *
+     * @return Posts
+     */
+    public function addComment(\AppBundle\Entity\comments $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \AppBundle\Entity\comments $comment
+     */
+    public function removeComment(\AppBundle\Entity\comments $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return Comments[]
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

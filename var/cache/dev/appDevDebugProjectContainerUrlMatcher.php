@@ -131,6 +131,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::postAddAction',  '_route' => 'postsadd',);
             }
 
+            // post
+            if (preg_match('#^/post/(?P<post>[^/]++)/?$#s', $pathinfo, $matches)) {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'post');
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::getPostAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

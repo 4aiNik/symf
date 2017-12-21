@@ -6,7 +6,9 @@ use AppBundle\Entity\Posts;
 use AppBundle\Form\PostsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -27,6 +29,7 @@ class DefaultController extends Controller
         $search = $request->get('search');
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('AppBundle:Posts')->getPosts($search);
+
         return $this->render('@App/Posts/posts.html.twig', [
             'posts' => $posts
         ]);
@@ -53,5 +56,20 @@ class DefaultController extends Controller
            'form' => $form->createView(),
         ]);
 
+    }
+
+    /**
+     * Matches /post/*
+     *
+     * @Route("/post/{post}/", name="post", requirements={"id"="\d+"})
+     */
+    public  function getPostAction(Request $request, Posts $post) {
+
+        //для ajax
+        //return new JsonResponse([]);
+
+        return $this->render('@App/Posts/detail_post.html.twig', [
+            'post' => $post
+        ]);
     }
 }

@@ -460,7 +460,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.b7a7ffe551efaf02e989ade25c28701f"/>
+      <argument type="service" id="service_locator.7e4d3251c0681ee1a643419c8b31049f"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -623,7 +623,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <argument>/var/www/html/symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -633,7 +633,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1391,14 +1391,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -2187,12 +2179,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a394d2337e461.71325251</argument>
+      <argument>5a3c053640fa76.16026436</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a394d2337e461.71325251</argument>
+      <argument>5a3c053640fa76.16026436</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3266,9 +3258,18 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.b7a7ffe551efaf02e989ade25c28701f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.221bf0a8d94c3628a1bbd3936a3c20bd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="post" type="service" id="autowired.AppBundle\Entity\Posts"/>
+      </argument>
+    </service>
+    <service id="service_locator.7e4d3251c0681ee1a643419c8b31049f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="AppBundle\Controller\DefaultController:getPostAction" type="service" id="service_locator.221bf0a8d94c3628a1bbd3936a3c20bd"/>
+        <argument key="AppBundle\Controller\DefaultController::getPostAction" type="service" id="service_locator.221bf0a8d94c3628a1bbd3936a3c20bd"/>
+      </argument>
     </service>
     <service id="service_locator.073e3ec3c8e7654aeb35c9b4b26361ad" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -3443,6 +3444,7 @@
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
+    <service id="autowired.AppBundle\Entity\Posts" class="AppBundle\Entity\Posts" public="false" autowire="true"/>
     <service id="service_locator.39e66930232432ca5ba91e98fdd8a17b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -3472,7 +3474,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>D7qf87pACO</argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <argument>/var/www/html/symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3480,7 +3482,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>xuuM0IGgsx</argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <argument>/var/www/html/symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3488,7 +3490,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>iE4PdQZRIJ</argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <argument>/var/www/html/symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3496,7 +3498,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>UyPqMOASsG</argument>
       <argument>0</argument>
-      <argument>FxkmHE+KpRZ49CkaLQOjbm</argument>
+      <argument>lt8YGxoVm2ImV3txW8DrMA</argument>
       <argument>/var/www/html/symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

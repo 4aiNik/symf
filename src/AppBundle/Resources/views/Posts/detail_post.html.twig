@@ -1,0 +1,46 @@
+{% extends '@App/index.html.twig' %}
+{% block title %}Пост{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            {% include '@App/Posts/post.html.twig' %}
+        </div>
+
+        {% if post.comments.count %}
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Комментарии</h3>
+                    </div>
+                </div>
+
+        {% for comment in post.comments %}
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-10">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>{{ comment.username }}</strong> <span class="text-muted">c{{ comment.createdAt|date('d.m.Y H:i:s') }}</span>
+                            </div>
+                            <div class="panel-body">
+                                {{ comment.content }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}
